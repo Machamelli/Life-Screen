@@ -43,13 +43,33 @@ export function useCalendar() {
                 setLoading(true);
                 // Fetch from Supabase
                 try {
-                    const { data: calendar, error: calError } = await supabase
+                    let { data: calendar, error: calError } = await supabase
                         .from('calendars')
                         .select('*')
-                        .single();
+                        .eq('user_id', user.id)
+                        .maybeSingle();
 
                     if (calError && calError.code !== 'PGRST116') {
-                        // Error fetching calendar
+                        console.error('Error fetching calendar:', calError);
+                    }
+
+                    // If no calendar exists, create one with default values
+                    if (!calendar) {
+                        const { data: newCalendar, error: createError } = await supabase
+                            .from('calendars')
+                            .insert({
+                                user_id: user.id,
+                                birth_year: 2000,
+                                life_expectancy: 80,
+                            })
+                            .select()
+                            .single();
+
+                        if (createError) {
+                            console.error('Error creating calendar:', createError);
+                        } else {
+                            calendar = newCalendar;
+                        }
                     }
 
                     if (calendar) {
@@ -238,7 +258,7 @@ export function useCalendar() {
                             .from('calendars')
                             .select('id')
                             .eq('user_id', user.id)
-                            .single();
+                            .maybeSingle();
 
                         if (calendar) {
                             await supabase
@@ -298,7 +318,7 @@ export function useCalendar() {
                     .from('calendars')
                     .select('id')
                     .eq('user_id', user.id)
-                    .single();
+                    .maybeSingle();
 
                 if (calendar) {
                     const { error: weeksError } = await supabase
