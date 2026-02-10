@@ -1,4 +1,4 @@
-# 🕐 Life Screen
+# <a href="public/logo.jpeg"><img src="public/logo.jpeg" alt="Life Screen Logo" width="60" style="vertical-align: middle;"></a> Life Screen
 
 > _"Time is the only currency we truly own. Witness the brevity and beauty of your journey on a single canvas."_
 
@@ -62,6 +62,22 @@ The application supports both authenticated users (with cloud sync) and guest mo
 | 📄 **PDF Export**                  | Download your life calendar as a high-quality PDF                                                     |
 | 🗑️ **Account Management**          | Full account deletion with data cleanup                                                               |
 | ⚡ **Virtualized Rendering**       | Smooth performance even with 80+ years of data                                                        |
+
+---
+
+## 📸 Screenshots
+
+### Hero Section
+
+![Hero Section](public/screenshots/hero-section.png)
+
+### Philosophy Section
+
+![Philosophy](public/screenshots/philosophy.png)
+
+### Dashboard
+
+![Dashboard](public/screenshots/dashboard.png)
 
 ---
 
