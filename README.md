@@ -1,4 +1,4 @@
-# <a href="public/logo.jpeg"><img src="public/logo.jpeg" alt="Life Screen Logo" width="60" style="vertical-align: middle;"></a> Life Screen
+# <span style="display: inline-flex; align-items: center;"><a href="public/logo.jpeg"><img src="public/logo.jpeg" alt="Life Screen Logo" width="60" style="margin-right: 10px;"></a> Life Screen</span>
 
 > _"Time is the only currency we truly own. Witness the brevity and beauty of your journey on a single canvas."_
 
